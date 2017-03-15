@@ -39,3 +39,8 @@ input background color-code: #999999
   border-radius:3px;
   box-shadow: inset 0px 4px rgba(0,0,0,0.2)
 }
+
+input {
+	height: 100px;
+	width: 100%;
+}
