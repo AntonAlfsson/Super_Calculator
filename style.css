@@ -1,18 +1,13 @@
-.calculator {
-	min-width: 300px;
-	max-width: 300px;
-	max-height: 400px;
-	min-height: 400px;
-}
 .greyButton {
-	background-color: #e0e0e0;
-	color: black;
+    background-color: #e0e0e0;
+    color: black;
 }
 
 .orangeButton {
-	background-color: #f5923e;
-	color: white;
+    background-color: #f5923e;
+    color: white;
 }
+
 
 /*
 
@@ -20,11 +15,12 @@ Tre översta knapparna är lite gråare color-code: #d6d6d6
 input background color-code: #999999
 
 */
+
 .calculator {
-	min-width: 300px;
-	max-width: 300px;
-	max-height: 400px;
-	min-height: 400px;
+    min-width: 300px;
+    max-width: 300px;
+    max-height: 400px;
+    min-height: 400px;
     border: solid black 4px;
     margin: 15%;
 }
