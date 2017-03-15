@@ -1,13 +1,5 @@
-$(function() {
-    console.log("DOM ready!");
-
-    document.getElementById('.calculator').addEventListener('click', function(event) {
-        event.preventDefault();
-        writeToInputField(event.target.id);
-    });
-
+$(document).on("click", "button", function() {
+    
+    console.log($(this).attr("data-id"));
+    
 });
-
-function writeToInputField(elementId) {
-    $(document).find("#input-field").text(elementId);
-}
