@@ -44,3 +44,7 @@ input {
 	height: 100px;
 	width: 100%;
 }
+
+button {
+	height: 60px;
+}
