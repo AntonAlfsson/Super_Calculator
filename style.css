@@ -22,3 +22,19 @@ input background color-code: #999999
     border: solid black 4px;
     margin: 15%;
 }
+
+/*Top portion*/
+.top.span.clear{
+  float:left;
+}
+
+/*Insert shadow on the screen to create indent*/
+.top.screen{
+  height:40px;
+  width:212px;
+  float:right;
+  padding:0 10px;
+  background:rgba(0,0,0,0.2);
+  border-radius:3px;
+  box-shadow: inset 0px 4px rgba(0,0,0,0.2)
+}
