@@ -14,3 +14,9 @@ Tre översta knapparna är lite gråare color-code: #d6d6d6
 input background color-code: #999999
 
 */
+.calculator {
+	min-width: 300px;
+	max-width: 300px;
+	max-height: 400px;
+	min-height: 400px;
+}
