@@ -1,9 +1,10 @@
 $(function() {
     console.log("DOM ready!");
 
-    document.getElementById('.calculator').addEventListener('click', function(event) {
+    $(document).find(".calculator").on("click", function(event) {
         event.preventDefault();
         writeToInputField(event.target.id);
+
     });
 
 });
