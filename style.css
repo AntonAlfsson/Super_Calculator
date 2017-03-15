@@ -1,3 +1,9 @@
+.calculator {
+	min-width: 300px;
+	max-width: 300px;
+	max-height: 400px;
+	min-height: 400px;
+}
 .greyButton {
 	background-color: #e0e0e0;
 	color: black;
