@@ -1,5 +1,22 @@
 $(document).on("click", "button", function() {
     
-    console.log($(this).attr("data-id"));
+    if(parseInt($(this).attr("data-id"))){
+        
+        writeToInputField($(this).attr("data-id"));
+    }else{
+        console.log('hej');
+    }
     
 });
+
+
+function writeToInputField(elementId) {
+    
+    var text = $(document).find("#input-field").val();
+    text += elementId;
+    
+    $(document).find("#input-field").val(text);
+ 
+}
+ 
+
