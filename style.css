@@ -82,8 +82,9 @@ button {
     background-color: #9c9494;
     padding: 0;
     border: none;
-    font-size: 30px;
+    font-size: 55px;
     color: white;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .text-right{
