@@ -6,10 +6,11 @@ var operatorPicked;
 
 $(document).on("click", "button", function() {
     
-    if(parseInt($(this).attr("data-id")) || $(this).attr("data-id") == 0){
+    if(parseFloat($(this).attr("data-id")) || $(this).attr("data-id") == 0){
         console.log($(this).attr("data-id"));
         writeToInputField($(this).attr("data-id"));
-    }else{
+    }
+    else{
         console.log('hej');
         console.log($(this).attr("data-id"));
         
