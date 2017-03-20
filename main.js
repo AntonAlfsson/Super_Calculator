@@ -20,5 +20,9 @@ function writeToInputField(elementId) {
     $(document).find("#input-field").val(text);
  
 }
+
+function addition() {
+  savedValue  = savedValue + talet;
+}
  
 
