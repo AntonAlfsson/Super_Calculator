@@ -1,12 +1,19 @@
 // Global vars -->
 var commaPresent = false;
 var savedValue = 0;
+var hasSavedValue = false;
 var operatorPicked;
+var currentResult = 0;
+var flag = false;
 // <--
 
 $(document).on("click", "button", function() {
     
     if(parseFloat($(this).attr("data-id")) || $(this).attr("data-id") == 0){
+    	if (flag) {
+        	$(document).find("#input-field").text('');
+        	flag = false;		
+        }
         writeToInputField($(this).attr("data-id"));
 
     }else{
@@ -18,24 +25,25 @@ $(document).on("click", "button", function() {
         		//Method call
         		break;
         	case "÷":
-                savedValue = $(document).find("#input-field").val();
-                $(document).find("#input-field").val('');
-        		operatorPicked = '/';
+                
+                
+        		
+                division();
         		break;
         	case "x":
-                savedValue = $(document).find("#input-field").val();
-                $(document).find("#input-field").val('');
-        		operatorPicked = 'x';
+             
+                
+        		multiply();
         		break;	
         	case "-":
-                savedValue = $(document).find("#input-field").val();
-                $(document).find("#input-field").val('');
-        		operatorPicked = '-';
+                
+                
+        		
         		break;
         	case "+":
-                savedValue = $(document).find("#input-field").val();
-                $(document).find("#input-field").val('');
-        		operatorPicked = '+';
+                
+                
+        		addition();
         		break;
         	case "=":
         		totalSum();
@@ -67,11 +75,19 @@ function writeToInputField(elementId) {
 }
 
 function division(){ // funktion för division
-    savedValue = savedValue/$(document).find("#input-field").val();
+    savedValue = $(document).find("#input-field").text();
+    operatorPicked = '/';
+    savedValue = savedValue/$(document).find("#input-field").text();
+    $(document).find("#input-field").text('');
 }
 
 function addition() {
-  savedValue  = savedValue + talet;
+	
+  	savedValue = $(document).find("#input-field").text();
+  	operatorPicked = '+';
+  	$(document).find("#input-field").text('');
+  	console.log('hej');
+  	totalSum();
 }
 
  
@@ -84,7 +100,10 @@ function maxValue(savedValue){
 }
 
 function multiply() {
-	savedValue = savedValue * $(document).find("#input-field").val();
+	savedValue = $(document).find("#input-field").text();
+	operatorPicked = 'x';
+	savedValue = savedValue * $(document).find("#input-field").text();
+	$(document).find("#input-field").text('');
 }
 
 function handleErrorCalculation() {
@@ -97,11 +116,24 @@ function handleErrorCalculation() {
 
 
 function totalSum() {
-    if (operatorPicked == "-") {
+
+
+   	if (operatorPicked == "-") {
         substraction();
     }
     else if (operatorPicked == "+"){
-        addition();
+    	if(!hasSavedValue) {
+    		currentResult = +currentResult + +savedValue;
+    		hasSavedValue = true;	
+    	} else {
+    		currentResult = +currentResult + +savedValue;
+    		console.log('saved value', savedValue);
+    		console.log('current result', currentResult);
+    		$(document).find("#input-field").text(currentResult);
+    		flag = true;	
+    	}
+        
+
     }
     else if (operatorPicked == "/"){
         division();
@@ -109,12 +141,11 @@ function totalSum() {
     else if (operatorPicked == "x") {
         multiply();
     }
-    else
-        savedValue = "Something went wrong";
 
-     $(document).find("#input-field").val(savedValue);
+    //$(document).find("#input-field").text('');
+    //$(document).find("#input-field").text(savedValue);
 }
-=======
+
 // Keyboard-bindings
 $(document).on("keydown", function(event) {
 	//console.log(event.which);
@@ -151,15 +182,19 @@ $(document).on("keydown", function(event) {
 		console.log('Button 0');
 	} else if(event.which == 107 || event.which == 171) {
 		console.log('Button +');
+		
 		addition();
 	} else if(event.which == 109 || event.which == 173) {
 		console.log('Button -');
+		
 		subtraction();
 	} else if(event.which == 106 || event.which == 222) {
 		console.log('Button *');
+		
 		multiply();
 	} else if(event.which == 47 || event.which == 111) {
 		console.log('Button /');
+		
 		division();
 	} else if(event.which == 110 || event.which == 188) {
 		console.log('Button ,');
@@ -170,10 +205,9 @@ $(document).on("keydown", function(event) {
 	}
 	
 });
->>>>>>> keyboardBindings
 
-    savedValue = +savedValue + +$(document).find("#input-field").val();
 
+    
 function checkComma(){
     
     if(!commaPresent) {
@@ -183,5 +217,4 @@ function checkComma(){
 
 }
 
-});
-
+
