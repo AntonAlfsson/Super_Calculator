@@ -20,5 +20,12 @@ function writeToInputField(elementId) {
     $(document).find("#input-field").val(text);
  
 }
- 
+
+function handleErrorCalculation() {
+    if (savedValue == 0){
+        savedValue = "Error";
+    }
+    else
+        savedValue = savedValue;
+} 
 
