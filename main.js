@@ -3,7 +3,8 @@ $(document).on("click", "button", function() {
     if(parseInt($(this).attr("data-id"))){
         
         writeToInputField($(this).attr("data-id"));
-    }else{
+    }
+    else{
         console.log('hej');
     }
     
