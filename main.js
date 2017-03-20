@@ -21,11 +21,11 @@ $(document).on("click", "button", function() {
         		break;
         	case "÷":
         		console.log($(this).attr("data-id"));
-        		division();
+        		//Method call
         		break;
         	case "x":
         		console.log($(this).attr("data-id"));
-        		multiply();
+        		//Method call
         		break;	
         	case "-":
         		console.log($(this).attr("data-id"));
@@ -33,7 +33,7 @@ $(document).on("click", "button", function() {
         		break;
         	case "+":
         		console.log($(this).attr("data-id"));
-        		addition();
+        		//Method call
         		break;
         	case "=":
         		console.log($(this).attr("data-id"));
@@ -81,6 +81,7 @@ function handleErrorCalculation() {
     else
         savedValue = savedValue;
 } 
+
 function totalSum() {
     if (operatorPicked == "-") {
         substraction();
