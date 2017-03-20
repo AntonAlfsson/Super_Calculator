@@ -16,10 +16,22 @@ $(document).on("click", "button", function() {
 function writeToInputField(elementId) {
     
     var text = $(document).find("#input-field").val();
-    text += elementId;
-    
+    if(maxValue(text)=="err"){
+        $.playSound('Robot_blip-Marianne_Gagnon-120342607');
+    }else{
+        text += elementId;
+    }
     $(document).find("#input-field").val(text);
  
+}
+
+function maxValue(savedValue){
+    if(savedValue.length<10){
+        return savedValue;
+    }else{
+        return "err";
+    }
+    
 }
  
 
