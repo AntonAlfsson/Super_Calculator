@@ -2,7 +2,7 @@
 var commaPresent = false;
 var savedValue = 0;
 var hasSavedValue = false;
-var operatorPicked;
+var operatorPicked = null;
 var currentResult = 0;
 var flag = false;
 // <--
@@ -21,7 +21,7 @@ $(document).on("click", "button", function() {
         switch($(this).attr("data-id")) {
 
             case "ac":
-                //Method call
+                erase();
                 break;
             case "÷":
                 commaPresent = false;	
@@ -72,7 +72,7 @@ function division(){ // funktion för division
     savedValue = $(document).find("#input-field").text();
     $(document).find("#input-field").text('');
     totalSum();
-    
+
 }
 
 function addition() {
@@ -80,7 +80,7 @@ function addition() {
     savedValue = $(document).find("#input-field").text();
     $(document).find("#input-field").text('');
     totalSum();
-    
+
 }
 
 function subtraction() {
@@ -116,7 +116,6 @@ function handleErrorCalculation() {
 
 function totalSum() {
 
-
     if (operatorPicked == "-") {
         if(!hasSavedValue) {
             currentResult = +currentResult + +savedValue;
@@ -125,6 +124,7 @@ function totalSum() {
             currentResult = +currentResult - +savedValue;
             $(document).find("#input-field").text(currentResult);
             flag = true;	
+            operatorPicked = null;
         }
     }
     else if (operatorPicked == "+"){
@@ -135,6 +135,7 @@ function totalSum() {
             currentResult = +currentResult + +savedValue;
             $(document).find("#input-field").text(currentResult);
             flag = true;	
+            operatorPicked = null;
         }
 
 
@@ -147,6 +148,7 @@ function totalSum() {
             currentResult = +currentResult / +savedValue;
             $(document).find("#input-field").text(currentResult);
             flag = true;	
+            operatorPicked = null;
         }
     }
     else if (operatorPicked == "x") {
@@ -156,7 +158,8 @@ function totalSum() {
         } else {
             currentResult = +currentResult * +savedValue;
             $(document).find("#input-field").text(currentResult);
-            flag = true;	
+            flag = true;
+            operatorPicked = null;
         }
 
     }
@@ -229,6 +232,17 @@ function checkComma(){
         commaPresent = true;	
     }
 
+}
+
+function erase(){
+
+    $(document).find("#input-field").text('');
+    commaPresent = false;
+    savedValue = 0;
+    hasSavedValue = false;
+    operatorPicked = null;
+    currentResult = 0;
+    flag = false;
 }
 
 
