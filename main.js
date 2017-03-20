@@ -33,3 +33,6 @@ function division(){ // funktion för division
 }
  
 
+function multiply() {
+	savedValue = savedValue * talet;
+}
