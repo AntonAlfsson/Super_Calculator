@@ -41,7 +41,7 @@ $(document).on("click", "button", function() {
         		break;
         	case ",":
         		console.log($(this).attr("data-id"));
-        		//Method call
+        		checkComma();
         		break;
         	default:
         		console.log('Button not active');
@@ -102,18 +102,9 @@ function totalSum() {
 
 function checkComma(){
     
-    var sign = ",";
-    var lenght = savedValue.lenght;
-    var numCommas = 0;
-    for(var i = 0; i < lenght; i++){
-        if(savedValue[i] == sign){
-            console.log('Comma found"');
-            numCommas++;
-        }
-
-        if(numCommas > 1){
-            alert('Error! Multiple commas found!')
-        }
-
-
+    if(!commaPresent) {
+    	writeToInputField(",");
+    	commaPresent = true;	
     }
+
+}
