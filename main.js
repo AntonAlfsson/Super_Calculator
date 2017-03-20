@@ -72,6 +72,7 @@ function addition() {
 function multiply() {
 	savedValue = savedValue * talet;
 }
+
 function handleErrorCalculation() {
     if (savedValue == 0){
         savedValue = "Error";
