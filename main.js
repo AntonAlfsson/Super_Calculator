@@ -41,7 +41,7 @@ $(document).on("click", "button", function() {
         		break;
         	case ",":
         		console.log($(this).attr("data-id"));
-        		//Method call
+        		checkComma();
         		break;
         	default:
         		console.log('Button not active');
@@ -81,7 +81,7 @@ function handleErrorCalculation() {
         savedValue = savedValue;
 }
 
-<<<<<<< HEAD
+
 function totalSum() {
     if (operatorPicked == "-") {
         substraction();
@@ -100,7 +100,16 @@ function totalSum() {
 
      writeToInputField($(this).attr(savedValue));
 }
-=======
+
+function checkComma(){
+    
+    if(!commaPresent) {
+    	writeToInputField(",");
+    	commaPresent = true;	
+    }
+
+}
+
 // Keyboard-bindings
 $(document).on("keydown", function(event) {
 	//console.log(event.which);
@@ -156,4 +165,7 @@ $(document).on("keydown", function(event) {
 	}
 	
 });
->>>>>>> keyboardBindings
+
+
+
+
