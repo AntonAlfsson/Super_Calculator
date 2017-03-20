@@ -4,12 +4,19 @@
     border: 1px solid #9c9494;
 }
 
+.greyButton:hover {
+    background-color: lightgrey;
+}
+
 .orangeButton {
     background-color: #f5923e;
     color: white;
     border: 1px solid #9c9494;
 }
 
+.orangeButton:hover {
+    background-color: #ff9d47;
+}
 
 /*
 
@@ -90,4 +97,3 @@ button {
 .text-right{
     
 }
-
