@@ -77,44 +77,43 @@ function writeToInputField(elementId) {
 
 function division(){ // funktion för division
 savedValue = $(document).find("#input-field").text();
-  	operatorPicked = '/';
   	$(document).find("#input-field").text('');
   	console.log('hej');
   	totalSum();
+    operatorPicked = '/';
 }
 
 function addition() {
 	
   	savedValue = $(document).find("#input-field").text();
-  	operatorPicked = '+';
   	$(document).find("#input-field").text('');
   	console.log('hej');
   	totalSum();
+    operatorPicked = '+';
 }
 
 function subtraction() {
 	savedValue = $(document).find("#input-field").text();
-  	operatorPicked = '-';
   	$(document).find("#input-field").text('');
   	console.log('hej');
   	totalSum();	
+  	operatorPicked = '-';
 }
 
- 
+function multiply() {
+	savedValue = $(document).find("#input-field").text();
+  	$(document).find("#input-field").text('');
+  	console.log('hej');
+  	totalSum();
+    operatorPicked = 'x';
+}
+
 function maxValue(savedValue){
     if(savedValue.length<10){
         return savedValue;
     }else{
         return "err";
     }
-}
-
-function multiply() {
-	savedValue = $(document).find("#input-field").text();
-  	operatorPicked = 'x';
-  	$(document).find("#input-field").text('');
-  	console.log('hej');
-  	totalSum();
 }
 
 function handleErrorCalculation() {
