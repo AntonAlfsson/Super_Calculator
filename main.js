@@ -170,8 +170,8 @@ $(document).on("keydown", function(event) {
 		console.log('Button /');
 		division();
 	} else if(event.which == 110 || event.which == 188) {
-		console.log('Not implemented');
 		console.log('Button ,');
+		checkComma()
 	} else if(event.which == 13) {
 		console.log('Button Enter');
 		totalSum();
