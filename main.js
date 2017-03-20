@@ -1,3 +1,9 @@
+// Global vars -->
+var commaPresent = false;
+var savedValue = 0;
+var operatorPicked;
+// <--
+
 $(document).on("click", "button", function() {
     
     if(parseInt($(this).attr("data-id")) || $(this).attr("data-id") == 0){
@@ -11,9 +17,6 @@ $(document).on("click", "button", function() {
     
 });
 
-var commaPresent = false;
-var savedValue = 0;
-var operatorPicked;
 
 function writeToInputField(elementId) {
     
