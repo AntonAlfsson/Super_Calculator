@@ -42,7 +42,7 @@ $(document).on("click", "button", function() {
         		break;
         	case ",":
         		console.log($(this).attr("data-id"));
-        		//Method call
+        		checkComma();
         		break;
         	default:
         		console.log('Button not active');
@@ -54,10 +54,15 @@ $(document).on("click", "button", function() {
 
 function writeToInputField(elementId) {
     
-    var text = $(document).find("#input-field").val();
-    text += elementId;
-    
-    $(document).find("#input-field").val(text);
+    var text = $(document).find("#input-field").text();
+    if(maxValue(text)=="err"){
+        $.playSound('Robot_blip-Marianne_Gagnon-120342607');
+    }else{
+        text += elementId;
+        console.log(text);
+        console.log(elementId);
+        $(document).find("#input-field").text(text);
+    }
  
 }
 
@@ -66,10 +71,17 @@ function division(){ // funktion för division
 }
 
 function addition() {
-    savedValue = +savedValue + +$(document).find("#input-field").val();
+  savedValue  = savedValue + talet;
 }
 
  
+function maxValue(savedValue){
+    if(savedValue.length<10){
+        return savedValue;
+    }else{
+        return "err";
+    }
+}
 
 function multiply() {
 	savedValue = savedValue * $(document).find("#input-field").val();
@@ -102,7 +114,7 @@ function totalSum() {
 
      $(document).find("#input-field").val(savedValue);
 }
-
+=======
 // Keyboard-bindings
 $(document).on("keydown", function(event) {
 	//console.log(event.which);
@@ -150,12 +162,26 @@ $(document).on("keydown", function(event) {
 		console.log('Button /');
 		division();
 	} else if(event.which == 110 || event.which == 188) {
-		console.log('Not implemented');
 		console.log('Button ,');
+		checkComma()
 	} else if(event.which == 13) {
 		console.log('Button Enter');
 		totalSum();
 	}
 	
 });
+>>>>>>> keyboardBindings
 
+    savedValue = +savedValue + +$(document).find("#input-field").val();
+
+function checkComma(){
+    
+    if(!commaPresent) {
+    	writeToInputField(",");
+    	commaPresent = true;	
+    }
+
+}
+
+});
+
