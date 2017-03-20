@@ -81,3 +81,6 @@ function handleErrorCalculation() {
         savedValue = savedValue;
 } 
 
+function substraction() {
+    savedValue = savedValue - talet;
+}
