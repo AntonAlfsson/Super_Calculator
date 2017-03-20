@@ -29,7 +29,7 @@ function writeToInputField(elementId) {
 }
 
 function division(){ // funktion för division
-    savedValue = this.savedValue/$(document).find("#input-field").val();
+    savedValue = savedValue/$(document).find("#input-field").val();
 }
  
 
