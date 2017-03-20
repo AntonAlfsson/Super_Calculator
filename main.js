@@ -40,9 +40,9 @@ $(document).on("click", "button", function() {
                 addition();
                 break;
             case "=":
-                commaPresent = false;	
-                savedValue = $(document).find("#input-field").text();
-                totalSum();
+                commaPresent = false;
+                totalSum();    
+                
                 break;
             case ".":
                 checkComma();
@@ -124,7 +124,6 @@ function totalSum() {
             currentResult = +currentResult - +savedValue;
             $(document).find("#input-field").text(currentResult);
             flag = true;	
-            operatorPicked = null;
         }
     }
     else if (operatorPicked == "+"){
@@ -135,7 +134,6 @@ function totalSum() {
             currentResult = +currentResult + +savedValue;
             $(document).find("#input-field").text(currentResult);
             flag = true;	
-            operatorPicked = null;
         }
 
 
@@ -148,7 +146,6 @@ function totalSum() {
             currentResult = +currentResult / +savedValue;
             $(document).find("#input-field").text(currentResult);
             flag = true;	
-            operatorPicked = null;
         }
     }
     else if (operatorPicked == "x") {
@@ -159,7 +156,6 @@ function totalSum() {
             currentResult = +currentResult * +savedValue;
             $(document).find("#input-field").text(currentResult);
             flag = true;
-            operatorPicked = null;
         }
 
     }
