@@ -53,13 +53,15 @@ $(document).on("click", "button", function() {
 
 function writeToInputField(elementId) {
     
-    var text = $(document).find("#input-field").val();
+    var text = $(document).find("#input-field").text();
     if(maxValue(text)=="err"){
         $.playSound('Robot_blip-Marianne_Gagnon-120342607');
     }else{
         text += elementId;
+        console.log(text);
+        console.log(elementId);
+        $(document).find("#input-field").text(text);
     }
-    $(document).find("#input-field").val(text);
  
 }
 
