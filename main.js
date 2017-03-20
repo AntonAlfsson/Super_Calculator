@@ -38,7 +38,7 @@ $(document).on("click", "button", function() {
         	case "-":
                 
                 
-        		
+        		subtraction();
         		break;
         	case "+":
                 
@@ -46,6 +46,7 @@ $(document).on("click", "button", function() {
         		addition();
         		break;
         	case "=":
+        		savedValue = $(document).find("#input-field").text();
         		totalSum();
         		break;
         	case ",":
@@ -75,10 +76,11 @@ function writeToInputField(elementId) {
 }
 
 function division(){ // funktion för division
-    savedValue = $(document).find("#input-field").text();
-    operatorPicked = '/';
-    savedValue = savedValue/$(document).find("#input-field").text();
-    $(document).find("#input-field").text('');
+savedValue = $(document).find("#input-field").text();
+  	operatorPicked = '/';
+  	$(document).find("#input-field").text('');
+  	console.log('hej');
+  	totalSum();
 }
 
 function addition() {
@@ -88,6 +90,14 @@ function addition() {
   	$(document).find("#input-field").text('');
   	console.log('hej');
   	totalSum();
+}
+
+function subtraction() {
+	savedValue = $(document).find("#input-field").text();
+  	operatorPicked = '-';
+  	$(document).find("#input-field").text('');
+  	console.log('hej');
+  	totalSum();	
 }
 
  
@@ -101,9 +111,10 @@ function maxValue(savedValue){
 
 function multiply() {
 	savedValue = $(document).find("#input-field").text();
-	operatorPicked = 'x';
-	savedValue = savedValue * $(document).find("#input-field").text();
-	$(document).find("#input-field").text('');
+  	operatorPicked = 'x';
+  	$(document).find("#input-field").text('');
+  	console.log('hej');
+  	totalSum();
 }
 
 function handleErrorCalculation() {
@@ -119,7 +130,16 @@ function totalSum() {
 
 
    	if (operatorPicked == "-") {
-        substraction();
+        if(!hasSavedValue) {
+    		currentResult = +currentResult + +savedValue;
+    		hasSavedValue = true;	
+    	} else {
+    		currentResult = +currentResult - +savedValue;
+    		console.log('saved value', savedValue);
+    		console.log('current result', currentResult);
+    		$(document).find("#input-field").text(currentResult);
+    		flag = true;	
+    	}
     }
     else if (operatorPicked == "+"){
     	if(!hasSavedValue) {
@@ -136,10 +156,29 @@ function totalSum() {
 
     }
     else if (operatorPicked == "/"){
-        division();
+          if(!hasSavedValue) {
+    		currentResult = +currentResult + +savedValue;
+    		hasSavedValue = true;	
+    	} else {
+    		currentResult = +currentResult / +savedValue;
+    		console.log('saved value', savedValue);
+    		console.log('current result', currentResult);
+    		$(document).find("#input-field").text(currentResult);
+    		flag = true;	
+    	}
     }
     else if (operatorPicked == "x") {
-        multiply();
+        if(!hasSavedValue) {
+    		currentResult = +currentResult + +savedValue;
+    		hasSavedValue = true;	
+    	} else {
+    		currentResult = +currentResult * +savedValue;
+    		console.log('saved value', savedValue);
+    		console.log('current result', currentResult);
+    		$(document).find("#input-field").text(currentResult);
+    		flag = true;	
+    	}
+
     }
 
     //$(document).find("#input-field").text('');
