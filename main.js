@@ -11,6 +11,9 @@ $(document).on("click", "button", function() {
     
 });
 
+var commaPresent = false;
+var savedValue = 0;
+var operatorPicked;
 
 function writeToInputField(elementId) {
     
