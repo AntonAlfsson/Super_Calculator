@@ -99,3 +99,21 @@ function totalSum() {
 
      writeToInputField($(this).attr(savedValue));
 }
+
+function checkComma(){
+    
+    var sign = ",";
+    var lenght = savedValue.lenght;
+    var numCommas = 0;
+    for(var i = 0; i < lenght; i++){
+        if(savedValue[i] == sign){
+            console.log('Comma found"');
+            numCommas++;
+        }
+
+        if(numCommas > 1){
+            alert('Error! Multiple commas found!')
+        }
+
+
+    }
