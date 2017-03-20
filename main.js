@@ -81,4 +81,21 @@ function handleErrorCalculation() {
     else
         savedValue = savedValue;
 } 
+function totalSum() {
+    if (operatorPicked == "-") {
+        substraction();
+    }
+    else if (operatorPicked == "+"){
+        addition();
+    }
+    else if (operatorPicked == "/"){
+        division();
+    }
+    else if (operatorPicked == "x") {
+        multiplication();
+    }
+    else
+        savedValue = "Something went wrong";
 
+     writeToInputField($(this).attr(savedValue));
+}
