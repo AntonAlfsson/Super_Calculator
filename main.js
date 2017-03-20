@@ -21,10 +21,10 @@ $(document).on("click", "button", function() {
 
 function writeToInputField(elementId) {
     
-    var text = $(document).find("#input-field").val();
+    var text = $(document).find("#input-field").text();
     text += elementId;
     
-    $(document).find("#input-field").val(text);
+    $(document).find("#input-field").text(text);
  
 }
 
