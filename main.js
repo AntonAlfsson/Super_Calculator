@@ -21,23 +21,23 @@ $(document).on("click", "button", function() {
         		break;
         	case "÷":
         		console.log($(this).attr("data-id"));
-        		//Method call
+        		operatorPicked = '/';
         		break;
         	case "x":
         		console.log($(this).attr("data-id"));
-        		//Method call
+        		operatorPicked = 'x';
         		break;	
         	case "-":
         		console.log($(this).attr("data-id"));
-        		//Method call
+        		operatorPicked = '-';
         		break;
         	case "+":
         		console.log($(this).attr("data-id"));
-        		//Method call
+        		operatorPicked = '+';
         		break;
         	case "=":
         		console.log($(this).attr("data-id"));
-        		//Method call
+        		totalSum();
         		break;
         	case ",":
         		console.log($(this).attr("data-id"));
