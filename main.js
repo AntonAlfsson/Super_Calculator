@@ -10,8 +10,6 @@ $(document).on("click", "button", function() {
         writeToInputField($(this).attr("data-id"));
 
     }else{
-        
-        savedValue = $(document).find("#input-field").val();
 
         switch($(this).attr("data-id")) {
 
@@ -20,23 +18,26 @@ $(document).on("click", "button", function() {
         		//Method call
         		break;
         	case "÷":
-        		console.log($(this).attr("data-id"));
+                savedValue = $(document).find("#input-field").val();
+                $(document).find("#input-field").val('');
         		operatorPicked = '/';
         		break;
         	case "x":
-        		console.log($(this).attr("data-id"));
+                savedValue = $(document).find("#input-field").val();
+                $(document).find("#input-field").val('');
         		operatorPicked = 'x';
         		break;	
         	case "-":
-        		console.log($(this).attr("data-id"));
+                savedValue = $(document).find("#input-field").val();
+                $(document).find("#input-field").val('');
         		operatorPicked = '-';
         		break;
         	case "+":
-        		console.log($(this).attr("data-id"));
+                savedValue = $(document).find("#input-field").val();
+                $(document).find("#input-field").val('');
         		operatorPicked = '+';
         		break;
         	case "=":
-        		console.log($(this).attr("data-id"));
         		totalSum();
         		break;
         	case ",":
@@ -66,12 +67,13 @@ function division(){ // funktion för division
 }
 
 function addition() {
-  savedValue  = savedValue + talet;
+    savedValue = +savedValue + +$(document).find("#input-field").val();
 }
+
  
 
 function multiply() {
-	savedValue = savedValue * talet;
+	savedValue = savedValue * $(document).find("#input-field").val();
 }
 
 function handleErrorCalculation() {
@@ -93,10 +95,10 @@ function totalSum() {
         division();
     }
     else if (operatorPicked == "x") {
-        multiplication();
+        multiply();
     }
     else
         savedValue = "Something went wrong";
 
-     writeToInputField($(this).attr(savedValue));
+     $(document).find("#input-field").val(savedValue);
 }
