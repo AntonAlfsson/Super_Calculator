@@ -20,5 +20,7 @@ function writeToInputField(elementId) {
     $(document).find("#input-field").val(text);
  
 }
- 
 
+function multiply() {
+	savedValue = savedValue * talet;
+}
