@@ -27,5 +27,9 @@ function writeToInputField(elementId) {
     $(document).find("#input-field").val(text);
  
 }
+
+function division(){ // funktion för division
+    savedValue = this.savedValue/$(document).find("#input-field").val();
+}
  
 
