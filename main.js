@@ -31,6 +31,10 @@ function writeToInputField(elementId) {
 function division(){ // funktion för division
     savedValue = savedValue/$(document).find("#input-field").val();
 }
+
+function addition() {
+  savedValue  = savedValue + talet;
+}
  
 
 function multiply() {
