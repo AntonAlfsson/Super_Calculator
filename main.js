@@ -83,7 +83,7 @@ function handleErrorCalculation() {
         savedValue = savedValue;
 }
 
-<<<<<<< HEAD
+
 function totalSum() {
     if (operatorPicked == "-") {
         substraction();
@@ -102,7 +102,7 @@ function totalSum() {
 
      $(document).find("#input-field").val(savedValue);
 }
-=======
+
 // Keyboard-bindings
 $(document).on("keydown", function(event) {
 	//console.log(event.which);
@@ -158,4 +158,4 @@ $(document).on("keydown", function(event) {
 	}
 	
 });
->>>>>>> keyboardBindings
+
